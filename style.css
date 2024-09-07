@@ -1,0 +1,52 @@
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    text-align: center;
+}
+
+#box {
+    height: 300px;
+    width: 300px;
+    background-color: salmon;
+    border: 2px solid black;
+}
+
+#box::before {
+    content: "❤️";
+    /* ham sirf html mai content likhsakte hai par agar css mai likhna hai to phir before and after */
+}
+
+#box::after {
+    content: "👋";
+}
+
+button {
+    padding: 8px 20px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(38, 88, 125);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+button::before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(38, 88, 125);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease;
+}
+
+button:hover:before {
+    transform: scale(1.4);
+    opacity: 0;
+}
